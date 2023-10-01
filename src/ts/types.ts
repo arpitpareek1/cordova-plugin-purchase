@@ -146,6 +146,11 @@ namespace CdvPurchase {
         loadProducts(products: IRegisterProduct[]): Promise<(Product | IError)[]>;
 
         /**
+         * 
+         */
+        loadAppStoreReceipt(): Promise<undefined | CdvPurchase.AppleAppStore.ApplicationReceipt>
+        
+        /**
          * Load the receipts
          */
         loadReceipts(): Promise<Receipt[]>;

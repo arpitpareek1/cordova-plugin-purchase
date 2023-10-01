@@ -92,6 +92,9 @@ namespace CdvPurchase {
              *
              * This is typically done when placing an order and restoring purchases.
              */
+
+            //TODO:can set this true to get the leatest recipt??
+
             forceReceiptReload = false;
 
             /** List of products loaded from AppStore */
@@ -423,7 +426,8 @@ namespace CdvPurchase {
             }
 
             /** Promisified loading of the AppStore receipt */
-            private async loadAppStoreReceipt(): Promise<undefined | ApplicationReceipt> {
+            // TODO: changed this to public so can get this outside this adapter to use by the user
+            async loadAppStoreReceipt(): Promise<undefined | ApplicationReceipt> {
                 let resolved = false;
                 return new Promise<undefined | ApplicationReceipt>(resolve => {
                     if (this.bridge.appStoreReceipt?.appStoreReceipt) {

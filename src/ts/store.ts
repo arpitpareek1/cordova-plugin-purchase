@@ -582,6 +582,13 @@ namespace CdvPurchase {
             if (!adapter) return false; // the selected adapter hasn't been initialized
             return adapter.checkSupport(functionality);
         }
+        //TODO: need to test this method for getting leated app store recipts
+        loadAppStoreReceipt(){
+            const appleAddpter = store.getAdapter(Platform.APPLE_APPSTORE)
+            if(appleAddpter){
+                return appleAddpter.loadAppStoreReceipt()
+            }
+        }
 
         /**
          * Verify a receipt or transacting with the receipt validation service.
